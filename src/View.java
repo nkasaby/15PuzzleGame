@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class View {
-
-
     public static void printMenu() {
         System.out.println("Welcome to the 15 Puzzle Game!");
         System.out.println("Your aim is to place the tiles in numerical order 1-15 by moving them vertically or horizontally using the empty space.");
@@ -30,7 +28,6 @@ public class View {
         }
         System.out.println("--  --  --  --");
 
-
         for (byte i = 0; i < 4; i++)
         {
 
@@ -38,6 +35,7 @@ public class View {
         }
     }
     public static void printWinMessage(boolean win) {
+        System.out.println();
         System.out.println("Congratulations! You won!");
     }
     public static void invalidMoveMessage(boolean valid) {

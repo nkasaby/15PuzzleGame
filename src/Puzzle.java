@@ -1,7 +1,4 @@
 
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Vector;
 public class Puzzle {
@@ -64,7 +61,7 @@ public class Puzzle {
         return convertedUserInput;
     }
 
-    public byte[][] updateBoard(byte[][] puzzleBoard, byte i, byte j, byte k, byte l){
+    public static byte[][] updateBoard(byte[][] puzzleBoard, byte i, byte j, byte k, byte l){
         byte[][] newBoard = puzzleBoard;
         byte temp = newBoard[i][j];
         newBoard[i][j] = newBoard[k][l];
@@ -86,18 +83,18 @@ public class Puzzle {
     }
 
     public static boolean validMove(byte[][] puzzleBoard, byte[] convertedUserInput) {
-        byte[] adress16 = numAddress(puzzleBoard, (byte) 16);
+        byte[] address16 = numAddress(puzzleBoard, (byte) 16);
 
-        if (convertedUserInput[0] == adress16[0] && (convertedUserInput[1] == adress16[1] + 1)) {
+        if (convertedUserInput[0] == address16[0] && (convertedUserInput[1] == address16[1] + 1)) {
             return true;
         }
-        else if (convertedUserInput[0] == adress16[0] && (convertedUserInput[1] == adress16[1] - 1)) {
+        else if (convertedUserInput[0] == address16[0] && (convertedUserInput[1] == address16[1] - 1)) {
             return true;
         }
-        else if ((convertedUserInput[0] == adress16[0] + 1) && convertedUserInput[1] == adress16[1]) {
+        else if ((convertedUserInput[0] == address16[0] + 1) && convertedUserInput[1] == address16[1]) {
             return true;
         }
-        else if ((convertedUserInput[0] == adress16[0] - 1 )&& convertedUserInput[1] == adress16[1]) {
+        else if ((convertedUserInput[0] == address16[0] - 1 )&& convertedUserInput[1] == address16[1]) {
             return true;
         }
         return false;

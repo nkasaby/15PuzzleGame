@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="902ec5e2-6690-4057-98ae-4110de9fcfc9" name="Changes" comment="95% done">
+    <list default="true" id="902ec5e2-6690-4057-98ae-4110de9fcfc9" name="Changes" comment="fixing bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ctrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ctrl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Puzzle.java" afterDir="false" />
@@ -25,6 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2R75HHBkCrZUeu2rZZeqMpBDCRM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -33,7 +36,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/nkasa/IdeaProjects/Game/src/Main.java&quot;
   }
 }</component>
@@ -53,12 +58,27 @@
       <option name="project" value="LOCAL" />
       <updated>1686610062388</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixing bug">
+      <created>1686659991763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686659991763</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixing bug">
+      <created>1686660008341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686660008341</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="95% done" />
-    <option name="LAST_COMMIT_MESSAGE" value="95% done" />
+    <MESSAGE value="fixing bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
