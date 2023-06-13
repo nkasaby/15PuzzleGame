@@ -10,25 +10,31 @@ public class View {
     }
     public static String userInput() {
         System.out.println();
-        System.out.println("Enter your move: ");
+        System.out.print("Enter your move: ");
         Scanner input = new Scanner(System.in);
         return input.nextLine();
     }
     public static void printPuzzleBoard (byte [][] puzzleBoard, byte []  rows, char [] cols) {
+        System.out.println();
 
         for (byte i = 0; i < 4; i++) {
             for (byte j = 0; j < 4; j++) {
-                System.out.printf("%-4d",puzzleBoard[i][j]);
-
+                if (puzzleBoard[i][j] == 16 ) {
+                    System.out.printf("%-4s"," ");
+                }
+                else
+                   System.out.printf("%-4d",puzzleBoard[i][j]);
             }
-            System.out.print( "  " + rows[i]);
+            System.out.print( " | " + rows[i]);
             System.out.println();
         }
-        System.out.println();
+        System.out.println("--  --  --  --");
+
 
         for (byte i = 0; i < 4; i++)
         {
-            System.out.print(cols[i] + "   ");
+
+            System.out.print( cols[i] + "   ");
         }
     }
     public static void printWinMessage(boolean win) {

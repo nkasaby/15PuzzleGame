@@ -12,7 +12,6 @@ public class Puzzle {
 
     public static void fillPuzzleBoard(byte[][] puzzleBoard) {
         Random num = new Random();
-        // byte computerPosition = (byte) (computerPositionChoice.nextInt(9) + 1);
         for (byte i = 0; i < 4; i++) {
             for (byte j = 0; j < 4; j++) {
 
@@ -23,7 +22,7 @@ public class Puzzle {
                 usedNums.add(puzzleBoard[i][j]);
 
                 if (puzzleBoard[i][j] == 0) {
-                    puzzleBoard[i][j] = 100;
+                    puzzleBoard[i][j] = 16;
                 }
             }
         }
@@ -60,8 +59,8 @@ public class Puzzle {
         byte[] convertedUserInput = new byte[2];
         char col = userInput.charAt(0);
         byte row = Byte.parseByte(userInput.substring(1));
-        convertedUserInput[0] = (byte) (col - 'a');
-        convertedUserInput[1] = (byte) (row - 1);
+        convertedUserInput[0] = (byte) (row - 1);
+        convertedUserInput[1] = (byte) (col - 'a');
         return convertedUserInput;
     }
 
@@ -87,25 +86,20 @@ public class Puzzle {
     }
 
     public static boolean validMove(byte[][] puzzleBoard, byte[] convertedUserInput) {
-        byte[] adress100 = numAddress(puzzleBoard, (byte) 100);
-        System.out.println(Arrays.toString(adress100));
+        byte[] adress16 = numAddress(puzzleBoard, (byte) 16);
 
-        byte[] adressUserInput = numAddress(puzzleBoard, (byte) convertedUserInput[0]);
-
-        if (adressUserInput[0] == adress100[0] && adressUserInput[1] == adress100[1] + 1) {
+        if (convertedUserInput[0] == adress16[0] && (convertedUserInput[1] == adress16[1] + 1)) {
             return true;
         }
-        if (adressUserInput[0] == adress100[0] && adressUserInput[1] == adress100[1] - 1) {
+        else if (convertedUserInput[0] == adress16[0] && (convertedUserInput[1] == adress16[1] - 1)) {
             return true;
         }
-        if (adressUserInput[0] == adress100[0] + 1 && adressUserInput[1] == adress100[1]) {
+        else if ((convertedUserInput[0] == adress16[0] + 1) && convertedUserInput[1] == adress16[1]) {
             return true;
         }
-        if (adressUserInput[0] == adress100[0] - 1 && adressUserInput[1] == adress100[1]) {
+        else if ((convertedUserInput[0] == adress16[0] - 1 )&& convertedUserInput[1] == adress16[1]) {
             return true;
         }
         return false;
     }
-
-
 }
