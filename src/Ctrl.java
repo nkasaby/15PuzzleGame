@@ -1,5 +1,5 @@
 public class Ctrl {
-    public void startGame() {
+    public static void startGame() {
         View.printMenu();
         Puzzle.fillPuzzleBoard(Puzzle.puzzleBoard);
         View.printPuzzleBoard(Puzzle.puzzleBoard, Puzzle.rows, Puzzle.cols);
