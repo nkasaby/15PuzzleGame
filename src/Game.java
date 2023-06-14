@@ -2,7 +2,6 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Game {
     public static void main(String[] args) {
-        Ctrl control = new Ctrl();
-        control.startGame();
+        Ctrl.startGame();
    }
 }
