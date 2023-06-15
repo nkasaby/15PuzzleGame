@@ -2,11 +2,11 @@
 import java.util.Random;
 import java.util.Vector;
 public class Puzzle {
+     static int numOfMoves=0;
     public static char[] cols = new char[]{'a', 'b', 'c', 'd'};
     public static byte[] rows = new byte[]{1, 2, 3, 4};
     static byte[][] puzzleBoard = new byte[4][4];
     static Vector<Byte> usedNums = new Vector<>();
-
     public static void fillPuzzleBoard(byte[][] puzzleBoard) {
         Random num = new Random();
         for (byte i = 0; i < 4; i++) {
@@ -41,34 +41,38 @@ public class Puzzle {
         if (userInput.length() != 2) {
             return false;
         }
-        char col = userInput.charAt(0);
-        byte row = Byte.parseByte(userInput.substring(1));
+        char col =  Character.toLowerCase(userInput.charAt(0));
+        String rowInput = userInput.substring(1);
+
         if (col < 'a' || col > 'd') {
             return false;
         }
-        if (row < 1 || row > 4) {
+        try {
+            byte row = Byte.parseByte(rowInput);
+            if (row < 1 || row > 4) {
+                return false;
+            }
+        } catch (NumberFormatException e) {
             return false;
         }
         return true;
     }
-
     public static byte[] convertUserInput(String userInput) {
         byte[] convertedUserInput = new byte[2];
-        char col = userInput.charAt(0);
+        char col = Character.toLowerCase(userInput.charAt(0));
         byte row = Byte.parseByte(userInput.substring(1));
         convertedUserInput[0] = (byte) (row - 1);
         convertedUserInput[1] = (byte) (col - 'a');
         return convertedUserInput;
     }
-
     public static byte[][] updateBoard(byte[][] puzzleBoard, byte i, byte j, byte k, byte l){
         byte[][] newBoard = puzzleBoard;
         byte temp = newBoard[i][j];
         newBoard[i][j] = newBoard[k][l];
         newBoard[k][l] = temp;
+        numOfMoves++;
         return newBoard;
     }
-
     public static byte[] numAddress (byte[][] puzzleBoard, byte num) {
         byte[] address = new byte[2];
         for (byte i = 0; i < 4; i++) {
@@ -81,7 +85,6 @@ public class Puzzle {
         }
         return address;
     }
-
     public static boolean validMove(byte[][] puzzleBoard, byte[] convertedUserInput) {
         byte[] address16 = numAddress(puzzleBoard, (byte) 16);
 
