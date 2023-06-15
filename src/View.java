@@ -1,10 +1,9 @@
-import java.util.Scanner;
-
 public class View {
-    public static void printMenu() {
+  public static void printMenu() {
         System.out.println("Welcome to the 15 Puzzle Game!");
         System.out.println("Your aim is to place the tiles in numerical order 1-15 by moving them vertically or horizontally using the empty space.");
-        System.out.println("You should enter your desired move in the following format: a4 where a is the column and 4 is the row.");
+        System.out.println("You should enter your desired move in the following format: a4 where a is the column and 4 is the row. " );
+        System.out.println("Note that no spaces are allowed between the column and row on the input.");
     }
     public static String userInput() {
         System.out.println();
@@ -21,7 +20,7 @@ public class View {
                     System.out.printf("%-4s"," ");
                 }
                 else
-                   System.out.printf("%-4d",puzzleBoard[i][j]);
+                    System.out.printf("%-4d",puzzleBoard[i][j]);
             }
             System.out.print( " | " + rows[i]);
             System.out.println();
@@ -36,10 +35,9 @@ public class View {
     }
     public static void printWinMessage(boolean win) {
         System.out.println();
-        System.out.println("Congratulations! You won!");
+        System.out.println("Congratulations! You win!");
+        System.out.println("You used up "+ Puzzle.numOfMoves +" moves.");
     }
     public static void invalidMoveMessage(boolean valid) {
         System.out.println("Invalid move! Try again!");
     }
-
-}
